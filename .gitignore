@@ -52,8 +52,8 @@ Mkfile.old
 dkms.conf
 
 #CLion files
-cmake-builg-debug
-cmake-builg-debug-coverage
+cmake-build-debug/
+cmake-build-debug-coverage/
 CMakeLists.txt
 main
 .idea
