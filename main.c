@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include "constants.h"
 #include "input.h"
-
-
+#include "command_interpretation.h"
 
 int main() {
     static char input_tape[N];
@@ -10,6 +9,7 @@ int main() {
 
     readInputTape(input_tape);
     readCommandTape(command_tape);
+    
 
     return 0;
 }
