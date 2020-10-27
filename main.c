@@ -9,7 +9,8 @@ int main() {
 
     readInputTape(input_tape);
     readCommandTape(command_tape);
-    
+
+
 
     return 0;
 }

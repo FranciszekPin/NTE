@@ -8,3 +8,4 @@
 #endif //NTE_COMMAND_INTERPRETATION_H
 
 char* getCommand(int n, char * command_tape);
+char* normalizeCommand(char * commandToNormalize);
