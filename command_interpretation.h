@@ -9,3 +9,4 @@
 
 char* getCommand(int n, char * command_tape);
 char* normalizeCommand(char * commandToNormalize);
+struct command interpretCommand(char * command);

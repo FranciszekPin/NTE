@@ -10,7 +10,7 @@ int main() {
     readInputTape(input_tape);
     readCommandTape(command_tape);
 
-
+    interpretCommand(getCommand(45, command_tape));
 
     return 0;
 }
