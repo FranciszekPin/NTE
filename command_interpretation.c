@@ -8,7 +8,6 @@
 #include "constants.h"
 
 char* getCommand(int n, char * command_tape)
-// returns first command starting from index n in command_tape
 {
     int i=n;
     static char result[N];
@@ -34,7 +33,6 @@ void removeSpaceFromTheEndOfStringIfOccurs(char *string, int index) {
 }
 
 char* normalizeCommand(char * commandToNormalize)
-// transforms command into form: COMMAND firstArgument secondArgument, for example "COPY 3 5"
 {
     static char normalizedCommand[N];
     int indexOfNormalizedCommand = 0;
@@ -58,7 +56,8 @@ char* normalizeCommand(char * commandToNormalize)
     return normalizedCommand;
 }
 
-int getCommandType(char * command) {
+int getCommandType(char * command)
+{
     int commandType = -1;
 
     if (command[0] == 'C' && command[1] == 'U')
@@ -73,7 +72,8 @@ int getCommandType(char * command) {
     return commandType;
 }
 
-char * getFirstArgumentInCString(char * firstArgument, char * command) {
+char * getFirstArgumentInCString(char * firstArgument, char * command)
+{
     int i=0;
     while (command[i] != ' ')
         i++;
