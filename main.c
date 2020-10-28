@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include "constants.h"
 #include "input.h"
+#include "text_manipulation.h"
 
 
 
