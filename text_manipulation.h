@@ -7,4 +7,4 @@
 
 #endif //NTE_TEXT_MANIPULATION_H
 
-char * cut(const char *inputString, char* outputString, int position, int numberOfCharactersToCut);
+void cut(const char *inputString, char* outputString, int position, int numberOfCharactersToCut);

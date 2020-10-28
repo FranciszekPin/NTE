@@ -4,7 +4,7 @@
 
 #include "text_manipulation.h"
 
-char * cut(const char *inputString, char* outputString, int position, int numberOfCharactersToCut) {
+void cut(const char *inputString, char* outputString, int position, int numberOfCharactersToCut) {
     int i=0;
     while (i != position) {
         outputString[i] = inputString[i];
@@ -21,6 +21,5 @@ char * cut(const char *inputString, char* outputString, int position, int number
     }
 
     outputString[i - numberOfCharactersToCut] = '\0';
-
-    return outputString;
 }
+
