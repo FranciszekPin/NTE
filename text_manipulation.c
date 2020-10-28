@@ -26,3 +26,11 @@ void cut(const char *inputString, char* outputString, char * clipboard, int posi
     outputString[i - numberOfCharactersToCut] = '\0';
 }
 
+void copy(const char *inputString, char * clipboard, int position, int numberOfCharactersToCopy) {
+    int i=position;
+    while (i < position+numberOfCharactersToCopy) {
+        clipboard[i-position] = inputString[i];
+        i++;
+    }
+    clipboard[i - position] = '\0';
+}
