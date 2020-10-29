@@ -30,3 +30,22 @@ void copy(const char *inputString, char * clipboard, int position, int numberOfC
     }
     clipboard[i - position] = '\0';
 }
+
+void paste(const char *inputString, char *outputString, const char * clipboard, int position) {
+    int i=0;
+    while (i != position)
+    {
+        outputString[i] = inputString[i];
+        i++;
+    }
+    int clipboardIndex = 0;
+    while (clipboard[clipboardIndex] != '\0') {
+        outputString[i+clipboardIndex] = clipboard[clipboardIndex];
+        clipboardIndex++;
+    }
+    while (inputString[i] != '\0') {
+        outputString[i+clipboardIndex] = inputString[i];
+        i++;
+    }
+    outputString[i+clipboardIndex] = '\0';
+}

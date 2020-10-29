@@ -10,3 +10,6 @@
 void cut(const char *inputString, char* outputString, char * clipboard, int position, int numberOfCharactersToCut);
 
 void copy(const char *inputString, char * clipboard, int position, int numberOfCharactersToCut);
+
+void paste(const char *inputString, char *outputString, const char * clipboard, int position);
+
