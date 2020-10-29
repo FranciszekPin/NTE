@@ -120,7 +120,20 @@ char * getSecondArgumentInCString(char * secondArgument, char * command) {
     return secondArgument;
 }
 
-struct command interpretCommand(char * command)
+int getIntFromString(char * string) {
+    int result = 0;
+    int i=0;
+    while (string[i] != '\0') {
+        if (string[i] < '0' || string[i] > '9')
+            return -1;
+        result = result * 10 + string[i] - '0';
+        i++;
+    }
+
+    return result;
+}
+
+struct Command interpretCommand(char * command)
 {
     command = normalizeCommand(command);
     int commandType = getCommandType(command);
@@ -130,7 +143,15 @@ struct command interpretCommand(char * command)
     getFirstArgumentInCString(firstArgument, command);
     getSecondArgumentInCString(secondArgument, command);
 
+    int firstArgumentInInt = getIntFromString(firstArgument);
+    int secondArgumentInInt = getIntFromString(secondArgument);
 
-    printf("%d %s %s\n", commandType, firstArgument, secondArgument);
+    struct Command result;
+    result.commandType = commandType;
+    result.firstArgument = firstArgumentInInt;
+    result.secondArgumentNumber = secondArgumentInInt;
+    result.secondArgumentText = secondArgument;
+
+    return result;
 
 }
