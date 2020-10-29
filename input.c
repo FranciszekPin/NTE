@@ -14,17 +14,18 @@ void readInputTape(char * input_tape)
         input_tape[i] = c;
         i++;
     }
-;
+    input_tape[i] = '\0';
 }
 
 void readCommandTape(char * command_tape)
 {
     int c;
     int i=0;
-    while((c = getchar()) != '\n') {
+    while((c = getchar()) != '\n' && c != EOF) {
         command_tape[i] = c;
         i++;
     }
 
-    return command_tape;
+    command_tape[i] = '\0';
+
 }

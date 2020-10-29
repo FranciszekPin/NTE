@@ -15,7 +15,7 @@ char* getCommand(int n, char * command_tape)
         result[i-n] = command_tape[i];
         i++;
     }
-    result[i] = '\0';
+    result[i-n] = '\0';
 
     return result;
 }
@@ -101,9 +101,6 @@ char * getSecondArgumentInCString(char * secondArgument, char * command) {
 
     while (command[i] != ' ' && command[i] != '\0')
         i++;
-
-    if (command[i] == '\0')
-        return "\0";
 
     i++;
 
