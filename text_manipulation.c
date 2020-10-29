@@ -49,3 +49,7 @@ void paste(const char *inputString, char *outputString, const char * clipboard, 
     }
     outputString[i+clipboardIndex] = '\0';
 }
+
+void insert(const char *inputString, char *outputString, const char * text, int position) {
+    paste(inputString, outputString, text, position);
+}

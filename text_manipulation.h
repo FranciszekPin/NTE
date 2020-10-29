@@ -13,3 +13,4 @@ void copy(const char *inputString, char * clipboard, int position, int numberOfC
 
 void paste(const char *inputString, char *outputString, const char * clipboard, int position);
 
+void insert(const char *inputString, char *outputString, const char * text, int position);
