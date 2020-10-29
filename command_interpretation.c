@@ -3,7 +3,6 @@
 //
 
 #include <stdbool.h>
-#include <stdio.h>
 #include "command_interpretation.h"
 #include "constants.h"
 
@@ -11,7 +10,13 @@ char* getCommand(int n, char * command_tape)
 {
     int i=n;
     static char result[N];
+    bool isLetter = true;
     while(command_tape[i] != '$' && command_tape[i] != '\0') {
+        if ((command_tape[i] < 'A' || command_tape[i] > 'Z') && isLetter) {
+            isLetter = false;
+            result[i-n] = ' ';
+            n--;
+        }
         result[i-n] = command_tape[i];
         i++;
     }
