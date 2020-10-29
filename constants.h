@@ -9,7 +9,7 @@
 
 #define N 20000
 
-struct command
+struct Command
 {
     int commandType;    //{0:cut 1:copy 2:paste 3:insert}
     int firstArgument;
