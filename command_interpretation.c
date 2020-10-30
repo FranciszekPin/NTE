@@ -125,6 +125,8 @@ char * getSecondArgumentInCString(char * secondArgument, char * command) {
 int getIntFromString(char * string) {
     int result = 0;
     int i=0;
+    if (string[0] == '\0')
+        return -1;
     while (string[i] != '\0') {
         if (string[i] < '0' || string[i] > '9')
             return -1;
@@ -137,7 +139,7 @@ int getIntFromString(char * string) {
 
 void getTextFromArgument(char * resultText, char * inputText) {
     int i=1;
-    while (inputText[i] != '\"') {
+    while (inputText[i] != '\"' && inputText[i] != '\0') {
         resultText[i-1] = inputText[i];
         i++;
     }
@@ -157,7 +159,8 @@ struct Command interpretCommand(char * command)
 
     int firstArgumentInInt = getIntFromString(firstArgument);
     int secondArgumentInInt = getIntFromString(secondArgument);
-    getTextFromArgument(secondArgumentInText, secondArgument);
+    if (secondArgumentInInt == -1)
+        getTextFromArgument(secondArgumentInText, secondArgument);
 
     struct Command result;
     result.commandType = commandType;
