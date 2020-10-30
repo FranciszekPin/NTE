@@ -14,5 +14,9 @@ void executeCommand(struct Command command, const char *inputString, char* outpu
         case 1: {
             copy(inputString,  clipboard, command.firstArgument, command.secondArgumentNumber);
         } break;
+        case 2: {
+            paste(inputString, outputString, clipboard, command.firstArgument);
+        } break;
     }
 }
+
