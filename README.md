@@ -15,5 +15,5 @@ cat exampleInput | ./main
 ```
 It should print:
 ```
-some input that should be printed
+Ola ma psa i kota
 ```
