@@ -135,6 +135,15 @@ int getIntFromString(char * string) {
     return result;
 }
 
+void getTextFromArgument(char * resultText, char * inputText) {
+    int i=1;
+    while (inputText[i] != '\"') {
+        resultText[i-1] = inputText[i];
+        i++;
+    }
+    resultText[i-1] = '\0';
+}
+
 struct Command interpretCommand(char * command)
 {
     command = normalizeCommand(command);
@@ -142,17 +151,19 @@ struct Command interpretCommand(char * command)
 
     char firstArgument[10];
     char secondArgument[N];
+    char secondArgumentInText[N];
     getFirstArgumentInCString(firstArgument, command);
     getSecondArgumentInCString(secondArgument, command);
 
     int firstArgumentInInt = getIntFromString(firstArgument);
     int secondArgumentInInt = getIntFromString(secondArgument);
+    getTextFromArgument(secondArgumentInText, secondArgument);
 
     struct Command result;
     result.commandType = commandType;
     result.firstArgument = firstArgumentInInt;
     result.secondArgumentNumber = secondArgumentInInt;
-    result.secondArgumentText = secondArgument;
+    result.secondArgumentText = secondArgumentInText;
 
     return result;
 
