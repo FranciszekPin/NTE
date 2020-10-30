@@ -4,7 +4,7 @@ not-interactive text editor written in C
 ## Usage
 ### 1. To compile:
 ```
-$ git clone https://github.com/FranciszekPin/NTE
+$ git clone https://github.com/FranciszekPin/NTE.git
 $ cd NTE
 $ make
 ```
