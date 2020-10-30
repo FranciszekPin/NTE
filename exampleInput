@@ -1,2 +1,2 @@
-Ala ma kota
-$CUT 7 3
+la ma kota
+$CUT7  4    $INSERT 6 " psa"    $PASTE10$INSERT 10 " i " $CUT    0 3 $INSERT 0 "Ola"
